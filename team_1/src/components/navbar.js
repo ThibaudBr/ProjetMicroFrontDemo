@@ -9,10 +9,10 @@ export function ResponsiveAppBar() {
 
     return (
         <nav className="navigation">
-            <a href="/home" className="brand-name">
+            <a href="/ho/home" className="brand-name">
                 Accueil
             </a>
-            <a href="/tp" className="brand-name">
+            <a href="/ho/tp" className="brand-name">
                 TP
             </a>
             <button className="hamburger">

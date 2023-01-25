@@ -9,7 +9,7 @@ import DisplayAccueil from "./components/displayAccueil";
 export default function Root(props) {
   return <div>
     <section>
-      <BrowserRouter basename="/">
+      <BrowserRouter basename="/ho">
         <Routes>
           <Route path="/home" element={<DisplayAccueil/>}/>
           <Route path={"/tp"} element={<Tp/>}/>

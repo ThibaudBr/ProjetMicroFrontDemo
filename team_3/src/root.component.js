@@ -8,7 +8,7 @@ import Tp from "./components/Tp";
 export default function Root(props) {
   return (
       <section>
-        <BrowserRouter basename="/">
+        <BrowserRouter basename="/ho">
           <Routes>
             <Route path="/home" element={<ButtonTeam3/>}/>
             <Route path={"/tp"} element={<Tp/>}/>
