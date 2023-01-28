@@ -1,6 +1,6 @@
 import ticket from 'home/ticket';
 import singleSpaHtml from 'single-spa-html';
-import displayTicket from 'displayTicket/displayTicket';
+import storeActions from 'storeActions/storeActions';
 
 const template = `
 <div
@@ -19,15 +19,17 @@ jsComponent.mount = function(opts, props) {
     return jsComponent.originalMount(opts, props)
         .then(() => {
             const el = document.querySelector('.ticket-image');
-            el.innerHTML = ticket
-                .map(({image}, index) => `
-<img src="${image}" style="max-width: 100%" data-index="${index}"  alt=""/>
+            const html =
+                ticket
+                    .map(({image}, index) => `
+<img src="${image}" style="max-width: 100%" data-index="${index}" />
           `)
-                .join('');
+                    .join('');
+            el.innerHTML = html;
             document
                 .querySelectorAll('.ticket-image img')
                 .forEach(el => el.addEventListener('click', (evt) => {
-                    displayTicket.image = parseInt(
+                    storeActions.image = parseInt(
                         evt.target.getAttribute('data-index')
                     );
                 }))

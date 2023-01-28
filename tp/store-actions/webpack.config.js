@@ -1,9 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    entry: './src/display-ticket',
+    entry: './src/store-actions',
     cache: false,
 
     mode: 'development',
@@ -39,13 +38,13 @@ module.exports = {
 
     plugins: [
         new ModuleFederationPlugin({
-            name: 'displayTicket',
-            library: { type: 'var', name: 'displayTicket' },
+            name: 'storeActions',
+            library: { type: 'var', name: 'storeActions' },
             filename: 'remoteEntry.js',
             remotes: {
             },
             exposes: {
-                './displayTicket': './src/display-ticket'
+                './storeActions': './src/store-actions'
             },
             shared: []
         }),

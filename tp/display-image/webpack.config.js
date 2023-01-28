@@ -39,7 +39,7 @@ module.exports = {
             filename: 'remoteEntry.js',
             remotes: {
                 home: 'home',
-                displayTicket: 'displayTicket',
+                storeActions: 'storeActions',
             },
             exposes: {
                 './displayImage': './src/index'

@@ -7,12 +7,6 @@ registerApplication(
 );
 
 registerApplication(
-    'display-ticket',
-    () => import('displayTicket/displayTicket'),
-    location => location.pathname.startsWith('/')
-);
-
-registerApplication(
     'header',
     () => import('nav/header'),
     location => location.pathname.startsWith('/')
@@ -25,8 +19,8 @@ registerApplication(
 );
 
 registerApplication(
-    'buy',
-    () => import('buy/buy'),
+    'displayButton',
+    () => import('displayButton/displayButton'),
     location => location.pathname.startsWith('/')
 );
 

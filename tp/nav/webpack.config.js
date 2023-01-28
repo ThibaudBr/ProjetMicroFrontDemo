@@ -38,7 +38,7 @@ module.exports = {
             library: { type: 'var', name: 'nav' },
             filename: 'remoteEntry.js',
             remotes: {
-                displayTicket: 'displayTicket',
+                storeActions: 'storeActions',
             },
             exposes: {
                 './header': './src/header',

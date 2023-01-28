@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import singleSpaReact from 'single-spa-react';
-import displayTicket from 'displayTicket/displayTicket';
+import storeActions from 'storeActions/storeActions';
 
 const Header = () => {
-    const [count, setCount] = useState(displayTicket.count);
+    const [count, setCount] = useState(storeActions.count);
     useEffect(() => {
-        displayTicket.subscribe(() => {
-            setCount(displayTicket.count);
+        storeActions.subscribe(() => {
+            setCount(storeActions.count);
         });
     }, []);
     return (
@@ -19,7 +19,7 @@ const Header = () => {
                         className="mui--appbar-height mui--text-display1"
                         style={{ paddingLeft: '1em' }}
                     >
-                        Header
+                        FYC Micro Frontends
                     </td>
                     <td
                         className="mui--appbar-height mui--text-display1"
@@ -38,7 +38,10 @@ const Header = () => {
 const headerLifecycles = singleSpaReact({
     React,
     ReactDOM,
-    rootComponent: Header
+    rootComponent: Header,
+    errorBoundary(err, info, props) {
+        // Customize the root error boundary for your microfrontend here.
+    },
 });
 
 export const bootstrap = headerLifecycles.bootstrap;

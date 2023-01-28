@@ -1,4 +1,4 @@
-const createDisplay = () => {
+const createStoreActions = () => {
     let count = 0;
     let image = 0;
     const subscribers = [];
@@ -24,6 +24,6 @@ const createDisplay = () => {
     }
 };
 
-const displayTicket = createDisplay();
+const storeActions = createStoreActions();
 
-export default displayTicket;
+export default storeActions;

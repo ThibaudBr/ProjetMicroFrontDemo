@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './src/index',
@@ -32,9 +31,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new CopyPlugin({patterns: [
-                { from: 'ticket', to: 'ticket' },
-            ]}),
         new ModuleFederationPlugin({
             name: 'home',
             library: { type: 'var', name: 'home' },
@@ -42,8 +38,8 @@ module.exports = {
             remotes: {
                 nav: 'nav',
                 displayImage: 'displayImage',
-                buy: 'buy',
-                displayTicket: 'displayTicket'
+                displayButton: 'displayButton',
+                storeActions: 'storeActions'
             },
             exposes: {
                 './ticket': './src/ticket'
@@ -55,3 +51,4 @@ module.exports = {
         }),
     ]
 };
+
