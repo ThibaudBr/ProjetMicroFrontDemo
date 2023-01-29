@@ -18,16 +18,16 @@ export default function Root(props) {
   };
 
   return (
-      <div>
+      <div style={{display:"flex",flexDirection:"column",width:"100%",alignItems:"center",background:"white",boxShadow:"0px 4px 4px rgba(0, 0, 0, 0.25)",padding:"5px",margin:"10px"}}>
         <div style={{textAlign: "center"}}>
-          <img src={ticket[image].image} style={{maxHeight: "200px"}}/>
+          <img src={ticket[image].image} style={{maxHeight: "200px", width:"320px"}}/>
         </div>
-        <button
+        <div
             onClick={addToCart}
-            style={{width: "100%"}}
+            style={{width: "130px",background:"#10657E",padding:"10px",margin:"10px",cursor:"pointer",borderRadius:"10px",color:"white",textAlign:"center"}}
         >
           Add To Cart
-        </button>
+        </div>
       </div>
   );
 }

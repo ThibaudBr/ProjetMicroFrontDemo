@@ -5,7 +5,7 @@ import storeActions from 'storeActions/storeActions';
 const template = `
 <div
   class="ticket-image"
-  style="display: grid; grid-template-columns: repeat(5, 20%);"
+  style="display: grid; grid-template-columns: repeat(3, 33%);"
 >
 </div>
 `;
@@ -22,7 +22,7 @@ jsComponent.mount = function(opts, props) {
             const html =
                 ticket
                     .map(({image}, index) => `
-<img src="${image}" style="max-width: 100%" data-index="${index}" />
+<img src="${image}" style="width: 100%; height: 200px; border-radius: 5px; padding: 10px; background: white; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); cursor: pointer; margin: 15px " data-index="${index}" />
           `)
                     .join('');
             el.innerHTML = html;
